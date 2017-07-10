@@ -1,0 +1,1 @@
+# Simple date convert without DateTime ou TimeSpan
