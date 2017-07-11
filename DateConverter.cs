@@ -50,10 +50,10 @@
 
 		public string Mount()
 		{
-			string mDay = day.ToString("00");
-			string mMounth = month.ToString("00");
-			string mHour = hour.ToString("00");
-			string mMinute = minute.ToString("00");
+			string mDay 	= day.ToString("00");
+			string mMounth 	= month.ToString("00");
+			string mHour 	= hour.ToString("00");
+			string mMinute 	= minute.ToString("00");
 
 			return $"{mDay}/{mMounth}/{year} {mHour}:{mMinute}";
 		}
