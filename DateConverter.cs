@@ -2,7 +2,7 @@
 {
 	class DateConverter
 	{
-		long day, month, year, hour, minute;
+		int day, month, year, hour, minute;
 		int[] calendar = new int[]{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 		public delegate void Operation(long value);
@@ -12,9 +12,8 @@
 		{
 			ValidOperator(op);
 			Unmount(date);
-			value = Absolute(value);
 			ConfigOperation(op);
-			Apply(value);
+			Apply(Math.Abs(value));
 			return Mount();
 		}
 
@@ -49,14 +48,14 @@
 			for (int i = 1; i <= value; i++) subMinute();
 		}
 
-		public long Absolute(long value)
-		{
-			return ( value < 0 ) ? Math.Abs(value) : value;
-		}
-
 		public string Mount()
 		{
-			return day.ToString("00") + "/" + month.ToString("00") + "/" + year + " " + hour.ToString("00") + ":" + minute.ToString("00");
+			string mDay = day.ToString("00");
+			string mMounth = month.ToString("00");
+			string mHour = hour.ToString("00");
+			string mMinute = minute.ToString("00");
+
+			return $"{mDay}/{mMounth}/{year} {mHour}:{mMinute}";
 		}
 
 		#endregion
